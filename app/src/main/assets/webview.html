@@ -1,0 +1,54 @@
+<html>
+<body bgcolor="yellow">
+<center>
+    <br/>
+    <input id="first_name" type="text" placeholder="First name"/>
+    <br/>
+    <br/>
+    <input id="last_name" type="text" placeholder="Last name"/>
+    <br/>
+    <br/>
+    <input id="date_of_birth" type="date" placeholder="Date of birth"/>
+    <br/>
+    <br/>
+    <input type="button" value="Sync" onClick="concatenateTwoString()"/>
+    <br/>
+    <br/>
+    <input type="button" value="Async" onClick="calculateAge()"/>
+    <br/>
+    <br/>
+    <br/>
+    <input type="button" value="Local notifications" onClick="showNotification()"/>
+    <br/>
+    <br/>
+    <br/>
+    <p id="sync_value">Concatenated string value: </p>
+    <br/>
+    <br/>
+    <br/>
+    <p id="age_value">Age: </p>
+</center>
+</body>
+<script type="text/javascript">
+    function showNotification() {
+        Android.showNotification();
+    }
+
+     function concatenateTwoString() {
+        document.getElementById("sync_value").innerHTML = "Concatenated string value: "
+
+        var firstName=document.getElementById("first_name").value;
+        var lastName=document.getElementById("last_name").value;
+
+        var concatenatedStrings = Android.concatenateTwoString(firstName, lastName);
+        document.getElementById("sync_value").innerHTML += concatenatedStrings
+    }
+
+     function calculateAge(toast) {
+        var birthDate=document.getElementById("date_of_birth").value;
+
+        var calculatedAge = Android.calculateAge(birthDate);
+        document.getElementById("age_value").innerHTML = calculatedAge
+    }
+</script>
+</html>

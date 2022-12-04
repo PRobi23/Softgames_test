@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Softgames Test</string>
+    <string name="notification_title">Solitaire smash</string>
+    <string name="notification_body">Play again to smash your top score</string>
+    <string name="channel_name">Name</string>
+    <string name="channel_description">Description</string>
+
 </resources>
